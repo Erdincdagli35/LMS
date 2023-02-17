@@ -1,0 +1,54 @@
+<div align="center">
+<h2 >Library List</h2> 
+<table class="table">
+    <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Capacity</th>
+            <th>Actions</th>
+            <th>Shelf Actions</th>
+            <th><button (click)="saveLibrary(library)" class="btn btn-info">Create</button></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let library of libraries">
+            <td>{{ library.id }}</td>
+            <td>{{ library.name }}</td>
+            <td>{{ library.capacity }}</td>
+            <td><button (click)="deleteLibrary(library.id)" class="btn btn-danger">Delete</button>
+                <button (click)="updateLibrary(library.id)" class="btn btn-danger">Update</button>
+                <button (click)="detailsLibrary(library.id)" class="btn btn-danger">Details</button>
+            </td>
+            <td><button  class="btn btn-danger">Add Shelf</button>
+                <button  class="btn btn-danger">Delete Shelf</button>
+                <button  class="btn btn-danger">Delete All Shelf</button>
+            </td>
+        </tr>
+    </tbody>
+
+</table>
+
+<hr> 
+<h2 >Library - Shelf List </h2>
+<table class="table">
+    <thead class="table-dark">
+        <tr>
+            <th>Library ID</th>
+            <th>Shelf ID</th>
+            <th>Shelf Name</th>
+            <th>Shelf Storage</th>
+        </tr>
+    </thead>
+    <tbody>
+            <tr *ngFor="let shelf of shelves">
+                <td>{{ shelf.libraryId }}</td>
+                <td>{{ shelf.id }}</td>
+                <td>{{ shelf.name }}</td>
+                <td>{{ shelf.storage }}</td>
+            </tr>
+        
+    </tbody>
+</table>
+
+</div>

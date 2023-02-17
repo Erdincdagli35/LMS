@@ -1,0 +1,50 @@
+package com.edsoft.lms.validation;
+
+import com.edsoft.lms.model.Library;
+import com.edsoft.lms.model.Shelf;
+import com.edsoft.lms.repository.LibraryRepository;
+import com.edsoft.lms.repository.ShelfRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import java.util.List;
+
+@Component
+public class LibraryValidation {
+
+    @Autowired
+    LibraryRepository libraryRepository;
+    @Autowired
+    private ShelfRepository shelfRepository;
+    //private Integer totalStorage = 0;
+
+    public boolean existsLibrary(Library library) {
+        return libraryRepository.findOneById(library.getId()) == null;
+    }
+
+    public boolean notExistsLibrary(Library library) {
+        return libraryRepository.findOneById(library.getId()) != null;
+    }
+
+    public boolean existsLibraryById(Long id) {
+        return libraryRepository.findOneById(id) != null;
+    }
+
+    public boolean existsLibraryRelatedShelf(Long libraryId, Long[] shelfIds) {
+        Library library = new Library();
+        for (Long shelfId : shelfIds) library = libraryRepository.findOneByIdAndShelves_Id(libraryId, shelfId);
+        return library != null ? true : false;
+    }
+
+    public boolean existsLibraryAnyRelatedShelf(Long libraryId) {
+        return libraryRepository.findOneById(libraryId).getShelves() != null;
+    }
+
+    public boolean libraryCapacityCheckOut(Long libraryId, List<Shelf> shelves) {
+        int totalStorage = 0;
+        for (Shelf relatedShelf : libraryRepository.findOneById(libraryId).getShelves())
+            totalStorage += relatedShelf.getStorage();
+        for (Shelf shelf : shelves) totalStorage += shelf.getStorage();
+        return libraryRepository.findOneById(libraryId).getCapacity() >= totalStorage;
+    }
+}
