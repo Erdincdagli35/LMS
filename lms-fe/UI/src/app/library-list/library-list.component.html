@@ -22,7 +22,7 @@
             </td>
             <td><button (click)="addToShelf(library.id)" class="btn btn-danger">Add</button> &nbsp;
                 <button (click)="removeToShelf(library.id,shelfIds)" class="btn btn-danger">Delete</button> &nbsp;
-                <button  class="btn btn-danger">Delete All</button>
+                <button (click)="removeAllShelves(library.id)" class="btn btn-danger">Delete All</button>
             </td>
         </tr>
     </tbody>

@@ -10,9 +10,14 @@ import { LibraryCreateComponent } from './library-create/library-create.componen
 import { LibraryListComponent } from './library-list/library-list.component';
 import { LibraryEditComponent } from './library-edit/library-edit.component';
 import { LibraryDeleteComponent } from './library-delete/library-delete.component';
-import { LibraryDetailsComponent } from './library-details/library-details.component';
+import { LibraryDetailsComponent } from './library-details/library-details.component'; 
 import { LibraryAddToShelfComponent } from './library-add-to-shelf/library-add-to-shelf.component';
-import { LibraryRemoveToShelfComponent } from './library-remove-to-shelf/library-remove-to-shelf.component';
+import { LibraryRemoveToShelfComponent } from './library-remove-to-shelf/library-remove-to-shelf.component'; 
+import { LibraryRemoveAllComponent } from './library-remove-all/library-remove-all.component';
+import { ShelfListComponent } from './shelf-list/shelf-list.component';
+import { ShelfDeleteComponent } from './shelf-delete/shelf-delete.component';
+import { ShelfDetailsComponent } from './shelf-details/shelf-details.component';
+import { ShelfEditComponent } from './shelf-edit/shelf-edit.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +28,12 @@ import { LibraryRemoveToShelfComponent } from './library-remove-to-shelf/library
     LibraryDeleteComponent,
     LibraryDetailsComponent,
     LibraryAddToShelfComponent,
-    LibraryRemoveToShelfComponent
+    LibraryRemoveToShelfComponent,
+    LibraryRemoveAllComponent,
+    ShelfListComponent,
+    ShelfDeleteComponent,
+    ShelfDetailsComponent,
+    ShelfEditComponent
     ],
   imports: [
     BrowserModule,
@@ -34,7 +44,14 @@ import { LibraryRemoveToShelfComponent } from './library-remove-to-shelf/library
       {path: 'library-create', component:LibraryCreateComponent},
       {path: 'library-list', component:LibraryListComponent},
       {path: 'library-update', component:LibraryEditComponent},
-      {path: 'library-delete', component:LibraryDeleteComponent}
+      {path: 'library-delete', component:LibraryDeleteComponent},
+      {path: 'library-details/:id', component: LibraryDetailsComponent},
+      {path: 'library-add-to-shelf/:id', component: LibraryAddToShelfComponent},
+      {path: 'library-remove-to-shelf/:id/:shelfIds', component: LibraryRemoveToShelfComponent},
+      {path: 'library-remove-all-shelves', component: LibraryRemoveAllComponent},
+      {path: 'shelf-all',component: ShelfListComponent},
+      {path: 'shelf-delete/:id',component: ShelfDeleteComponent},
+      {path: 'shelf-list',component: ShelfListComponent}
     ])
     ],
   providers: [],

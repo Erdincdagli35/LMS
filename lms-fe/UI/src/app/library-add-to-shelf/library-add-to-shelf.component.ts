@@ -29,7 +29,7 @@ export class LibraryAddToShelfComponent {
   }
 
   addToShelf(){
-    this.libraryService.addToShelf(this.library.id,this.shelf).subscribe(data => {
+    this.libraryService.addToShelf(this.library.id,this.library).subscribe(data => {
       this.goToLibraryList();
     })
   }

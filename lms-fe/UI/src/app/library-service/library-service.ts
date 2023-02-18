@@ -1,9 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-
 import { Library } from '../models/library';
-import { Shelf } from '../models/shelf';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +12,8 @@ export class LibraryService {
   private deleteURL = "http://localhost:8080/libraries";
 
   private addToShelfURL = "http://localhost:8080/libraries/addShelf";
+  private removeToShelfURL = "http://localhost:8080/libraries/removeShelf";
+  private removeAllShevesURL = "http://localhost:8080/libraries/removeAllShelf";
 
   constructor(private httpClient: HttpClient) { }
 
@@ -37,11 +37,15 @@ export class LibraryService {
     return this.httpClient.put(this.baseURL, library);
   }
 
-  addToShelf(id : number, shelf : Shelf): Observable<Object>{
-    return this.httpClient.post(`${this.addToShelfURL}/${id}`,shelf);
+  addToShelf(id : number, library : Library): Observable<Object>{
+    return this.httpClient.post(`${this.addToShelfURL}/${id}`,library);
   }
 
   removeToShelf(id : number, shelfIds : number[]): Observable<Object>{
-    return this.httpClient.delete(`${this.addToShelfURL}/${id}/${shelfIds}`);
+    return this.httpClient.delete(`${this.removeToShelfURL}/${id}/${shelfIds}`);
+  }
+
+  removeAllShelves(id : number): Observable<Object>{
+    return this.httpClient.delete(`${this.removeAllShevesURL}/${id}`);
   }
 }

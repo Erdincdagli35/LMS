@@ -67,4 +67,8 @@ export class LibraryListComponent {
     removeToShelf(id : number, shelfIds: number[]){
       this.router.navigate(['/library-remove-to-shelf', id, shelfIds]);
     }
+
+    removeAllShelves(id : number){
+      this.router.navigate(['/library-remove-all-shelves', id]);
+    }
 }
