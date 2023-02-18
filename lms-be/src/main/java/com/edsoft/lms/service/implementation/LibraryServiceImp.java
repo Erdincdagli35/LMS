@@ -56,14 +56,14 @@ public class LibraryServiceImp implements LibraryService {
     }
 
     @Override
-    public List<Long> addToShelf(List<Shelf> shelves, Long libraryId) {
+    public Long addToShelf(Shelf shelf, Long libraryId) {
         Library library = getById(libraryId);
-        for (Shelf shelf : shelves) shelf.setLibrary(library);
+        shelf.setLibrary(library);
 
-        library.getShelves().addAll(shelves);
-        shelfRepository.saveAll(shelves);
+        //library.getShelves().addAll(shelf);
+        shelfRepository.save(shelf);
         libraryRepository.save(library);
-        return shelves.stream().map(Shelf::getId).toList();
+        return shelf.getId(); //shelves.stream().map(Shelf::getId).toList();
     }
 
     @Override

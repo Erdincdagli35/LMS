@@ -16,6 +16,7 @@ export class LibraryListComponent {
 
     shelf : Shelf = new Shelf();
     shelves : Shelf[] = [];
+    shelfIds : number[] = [];
 
     constructor(private libraryService:LibraryService, 
                 private router:Router){}
@@ -32,6 +33,7 @@ export class LibraryListComponent {
         for(this.library of this.libraries){
             for(this.shelf of this.library.shelves){
               this.shelf.libraryId = this.library.id;
+              this.shelf.libraryName = this.library.name;
               this.shelves.push(this.shelf);
             }    
         } 
@@ -56,5 +58,13 @@ export class LibraryListComponent {
 
     detailsLibrary(id: number){
       this.router.navigate(['/library-details',id]);
+    }
+
+    addToShelf(id : number){
+      this.router.navigate(['/library-add-to-shelf',id]);
+    }
+
+    removeToShelf(id : number, shelfIds: number[]){
+      this.router.navigate(['/library-remove-to-shelf', id, shelfIds]);
     }
 }

@@ -16,7 +16,7 @@ public interface LibraryService {
 
     Library getById(Long libraryId);
 
-    List<Long> addToShelf(List<Shelf> shelves, Long libraryId);
+    Long addToShelf(Shelf shelf, Long libraryId);
 
     List<Long> removeToShelf(Long libraryId, Long[] shelfIds);
 

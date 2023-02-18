@@ -40,11 +40,12 @@ public class LibraryValidation {
         return libraryRepository.findOneById(libraryId).getShelves() != null;
     }
 
-    public boolean libraryCapacityCheckOut(Long libraryId, List<Shelf> shelves) {
+    public boolean libraryCapacityCheckOut(Long libraryId, Shelf shelf) {
         int totalStorage = 0;
         for (Shelf relatedShelf : libraryRepository.findOneById(libraryId).getShelves())
             totalStorage += relatedShelf.getStorage();
-        for (Shelf shelf : shelves) totalStorage += shelf.getStorage();
+
+        totalStorage += shelf.getStorage();
         return libraryRepository.findOneById(libraryId).getCapacity() >= totalStorage;
     }
 }

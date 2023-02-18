@@ -1,7 +1,7 @@
-<div align="center">
+<div class="library" align="center">
 <h2 >Library List</h2> 
-<table class="table">
-    <thead class="table-dark">
+<table class="table mat-table">
+    <thead class="table">
         <tr>
             <th>ID</th>
             <th>Name</th>
@@ -16,13 +16,13 @@
             <td>{{ library.id }}</td>
             <td>{{ library.name }}</td>
             <td>{{ library.capacity }}</td>
-            <td><button (click)="deleteLibrary(library.id)" class="btn btn-danger">Delete</button>
-                <button (click)="updateLibrary(library.id)" class="btn btn-danger">Update</button>
+            <td><button (click)="deleteLibrary(library.id)" class="btn btn-danger">Delete</button> &nbsp;
+                <button (click)="updateLibrary(library.id)" class="btn btn-danger">Update</button> &nbsp;
                 <button (click)="detailsLibrary(library.id)" class="btn btn-danger">Details</button>
             </td>
-            <td><button  class="btn btn-danger">Add Shelf</button>
-                <button  class="btn btn-danger">Delete Shelf</button>
-                <button  class="btn btn-danger">Delete All Shelf</button>
+            <td><button (click)="addToShelf(library.id)" class="btn btn-danger">Add</button> &nbsp;
+                <button (click)="removeToShelf(library.id,shelfIds)" class="btn btn-danger">Delete</button> &nbsp;
+                <button  class="btn btn-danger">Delete All</button>
             </td>
         </tr>
     </tbody>
@@ -35,14 +35,16 @@
     <thead class="table-dark">
         <tr>
             <th>Library ID</th>
-            <th>Shelf ID</th>
-            <th>Shelf Name</th>
-            <th>Shelf Storage</th>
+            <th>Library Name</th>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Storage</th>
         </tr>
     </thead>
     <tbody>
             <tr *ngFor="let shelf of shelves">
                 <td>{{ shelf.libraryId }}</td>
+                <td>{{ shelf.libraryName }}</td>
                 <td>{{ shelf.id }}</td>
                 <td>{{ shelf.name }}</td>
                 <td>{{ shelf.storage }}</td>

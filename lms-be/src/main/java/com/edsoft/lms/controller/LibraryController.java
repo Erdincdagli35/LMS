@@ -91,20 +91,20 @@ public class LibraryController {
 
     @PostMapping("addShelf/{libraryId}")
     public ResponseEntity addToShelf(@PathVariable Long libraryId,
-                                     @RequestBody List<Shelf> shelves) {
+                                     @RequestBody Shelf shelf) {
         if (!libraryValidation.existsLibraryById(libraryId)) {
             return ResponseEntity
                     .status(HttpStatus.INTERNAL_SERVER_ERROR)
                     .body("There is not a Library id : " + libraryId);
         }
 
-        if (!libraryValidation.libraryCapacityCheckOut(libraryId, shelves)) {
+        if (!libraryValidation.libraryCapacityCheckOut(libraryId, shelf)) {
             return ResponseEntity
                     .status(HttpStatus.INTERNAL_SERVER_ERROR)
                     .body("Library capacity is not enough.");
         }
 
-        return ResponseEntity.ok(libraryService.addToShelf(shelves, libraryId));
+        return ResponseEntity.ok(libraryService.addToShelf(shelf, libraryId));
     }
 
     @DeleteMapping("removeShelf/{libraryId}/{shelfIds}")

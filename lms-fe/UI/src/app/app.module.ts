@@ -11,6 +11,8 @@ import { LibraryListComponent } from './library-list/library-list.component';
 import { LibraryEditComponent } from './library-edit/library-edit.component';
 import { LibraryDeleteComponent } from './library-delete/library-delete.component';
 import { LibraryDetailsComponent } from './library-details/library-details.component';
+import { LibraryAddToShelfComponent } from './library-add-to-shelf/library-add-to-shelf.component';
+import { LibraryRemoveToShelfComponent } from './library-remove-to-shelf/library-remove-to-shelf.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { LibraryDetailsComponent } from './library-details/library-details.compo
     LibraryListComponent,
     LibraryEditComponent,
     LibraryDeleteComponent,
-    LibraryDetailsComponent
+    LibraryDetailsComponent,
+    LibraryAddToShelfComponent,
+    LibraryRemoveToShelfComponent
     ],
   imports: [
     BrowserModule,
