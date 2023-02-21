@@ -7,7 +7,7 @@ import java.util.List;
 public interface ShelfService {
     List<Shelf> getAll(String name);
 
-    Shelf edit(Shelf shelf);
+    Shelf edit(Shelf shelfTemp,Shelf shelf);
 
     Long delete(Shelf shelf);
 

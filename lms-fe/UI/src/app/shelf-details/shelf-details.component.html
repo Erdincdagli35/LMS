@@ -1,1 +1,15 @@
-<p>shelf-details works!</p>
+<h3 align = "center"> View Shelf Details</h3>
+<div align = "center">
+    <div>
+        <label> <b> ID: </b></label> {{shelf.id}}
+    </div>
+    <div>
+        <label> <b> Name: </b></label> {{shelf.name}}
+    </div>
+    <div>
+        <label> <b> Storage: </b></label> {{shelf.storage}}
+    </div>
+    <div>
+        <button (click)="onSubmit()" class="btn btn-info">Go Back</button>
+    </div>
+</div>

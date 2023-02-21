@@ -1,21 +1,28 @@
-<div>
-    <h3>Add Shelf</h3>
+   <h3>Add Shelf</h3>
     <form (ngSubmit)="onSubmit()">
         <div class="form-group">
-            <label>Library ID  : </label>
-            <input type="text" class="form-control" id="id" [(ngModel)]="library.id" name="id">
+            <b><label>Library ID</label></b> 
+            <label>{{library.id}}</label>
         </div>
-
+        &nbsp;
         <div class="form-group">
-            <label>Name : </label>
+            <b><label>Name</label></b>
             <input type="text" class="form-control" id="name" [(ngModel)]="shelf.name" name="name">
         </div>
-
+        &nbsp;
         <div class="form-group">
-            <label>Storage : </label> 
+            <b><label>Storage</label></b>
             <input type="text" class="form-control" id="storage" [(ngModel)]="shelf.storage" name="storage"> <br>
-            <label> <b> Capacity: </b></label> {{library.capacity}}
         </div>
-        <button class="btn btn-success" type="submit">Submit</button>
+        &nbsp;
+        <div class="form-group">
+            <b><label>Capacity</label></b>
+            <label>{{library.capacity}}</label>
+        </div>
+        &nbsp;
+        <div class="form-group">
+            <label><button class="btn btn-success" type="reset">Price</button></label>
+            <label><button class="btn btn-success" type="submit">Submit</button></label>
+        </div>
+        
     </form>
-</div>

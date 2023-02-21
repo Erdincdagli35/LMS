@@ -1,18 +1,17 @@
-form, th , td, h3 {
-    border: 1px solid grey;
-    border-collapse: collapse;
-    padding: 5px;
-    align-self: center;
-    text-align: center;
-  }
-  
-  table tr:nth-child(odd) {
-    background-color: black;
-    color: white;
-  }
-  
-  table tr:nth-child(even) {
-    background-color: black;
-    color: white;
-  }
-  
+form, th , td, h3, label {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+}
+
+table tr:nth-child(odd) {
+  background-color: black;
+  color: white;
+}
+
+table tr:nth-child(even) {
+  background-color: black;
+  color: white;
+}

@@ -14,6 +14,7 @@ import { LibraryDetailsComponent } from './library-details/library-details.compo
 import { LibraryAddToShelfComponent } from './library-add-to-shelf/library-add-to-shelf.component';
 import { LibraryRemoveToShelfComponent } from './library-remove-to-shelf/library-remove-to-shelf.component'; 
 import { LibraryRemoveAllComponent } from './library-remove-all/library-remove-all.component';
+
 import { ShelfListComponent } from './shelf-list/shelf-list.component';
 import { ShelfDeleteComponent } from './shelf-delete/shelf-delete.component';
 import { ShelfDetailsComponent } from './shelf-details/shelf-details.component';
@@ -46,9 +47,11 @@ import { ShelfEditComponent } from './shelf-edit/shelf-edit.component';
       {path: 'library-update', component:LibraryEditComponent},
       {path: 'library-delete', component:LibraryDeleteComponent},
       {path: 'library-details/:id', component: LibraryDetailsComponent},
+      
       {path: 'library-add-to-shelf/:id', component: LibraryAddToShelfComponent},
       {path: 'library-remove-to-shelf/:id/:shelfIds', component: LibraryRemoveToShelfComponent},
       {path: 'library-remove-all-shelves', component: LibraryRemoveAllComponent},
+
       {path: 'shelf-all',component: ShelfListComponent},
       {path: 'shelf-delete/:id',component: ShelfDeleteComponent},
       {path: 'shelf-list',component: ShelfListComponent}

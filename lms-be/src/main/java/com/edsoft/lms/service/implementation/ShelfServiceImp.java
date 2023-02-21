@@ -1,5 +1,6 @@
 package com.edsoft.lms.service.implementation;
 
+import com.edsoft.lms.model.Library;
 import com.edsoft.lms.model.Shelf;
 import com.edsoft.lms.repository.ShelfRepository;
 import com.edsoft.lms.service.ShelfService;
@@ -22,8 +23,10 @@ public class ShelfServiceImp implements ShelfService {
     }
 
     @Override
-    public Shelf edit(Shelf shelf) {
-        return shelfRepository.save(shelf);
+    public Shelf edit(Shelf shelfTemp, Shelf shelf) {
+        shelfTemp.setName(shelf.getName());
+        shelfTemp.setStorage(shelf.getStorage());
+        return shelfRepository.save(shelfTemp);
     }
 
     @Override

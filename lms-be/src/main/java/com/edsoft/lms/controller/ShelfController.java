@@ -37,13 +37,13 @@ public class ShelfController {
 
     @PutMapping
     public ResponseEntity edit(@RequestBody Shelf shelf) {
-        Shelf shelfTemp = shelfRepository.findOneById(shelf.getId());
+        Shelf shelfTemp = shelfService.getById(shelf.getId());
         if (shelfTemp == null) {
             return ResponseEntity
                     .status(HttpStatus.INTERNAL_SERVER_ERROR)
                     .body("There is not a shelf id : " + shelf.getId());
         }
-        return ResponseEntity.ok(shelfService.edit(shelf));
+        return ResponseEntity.ok(shelfService.edit(shelfTemp, shelf));
     }
 
     @DeleteMapping("/{shelfId}")

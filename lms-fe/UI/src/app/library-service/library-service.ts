@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+
 import { Library } from '../models/library';
+import { Shelf } from '../models/shelf';
 
 @Injectable({
   providedIn: 'root'
@@ -37,8 +39,8 @@ export class LibraryService {
     return this.httpClient.put(this.baseURL, library);
   }
 
-  addToShelf(id : number, library : Library): Observable<Object>{
-    return this.httpClient.post(`${this.addToShelfURL}/${id}`,library);
+  addToShelf(id : number, shelf : Shelf): Observable<Object>{
+    return this.httpClient.post(`${this.addToShelfURL}/${id}`,shelf);
   }
 
   removeToShelf(id : number, shelfIds : number[]): Observable<Object>{
