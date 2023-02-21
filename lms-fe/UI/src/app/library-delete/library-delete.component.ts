@@ -22,8 +22,8 @@ export class LibraryDeleteComponent {
       this.library.id = this.activetedRoute.snapshot.params['id'];
       console.log("this.library.id" + this.library.id);
         this.libraryService.deleteLibrary(this.library.id).subscribe( data => {
-          this.getLibrary();
           this.goToList();
+          this.getLibrary();
         })
     }
 
@@ -34,6 +34,6 @@ export class LibraryDeleteComponent {
     }
 
     goToList() {
-      this.router.navigate(['libraries-all']);
+      this.router.navigate(['library-list']);
     }
 }

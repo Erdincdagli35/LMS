@@ -56,20 +56,17 @@ import { BookEditComponent } from './book-edit/book-edit.component';
     RouterModule.forRoot([
       {path: 'library-create', component:LibraryCreateComponent},
       {path: 'library-list', component:LibraryListComponent},
-      {path: 'library-update', component:LibraryEditComponent},
-      {path: 'library-delete', component:LibraryDeleteComponent},
+      {path: 'library-update/:id', component:LibraryEditComponent},
+      {path: 'library-delete/:id', component:LibraryDeleteComponent},
       {path: 'library-details/:id', component: LibraryDetailsComponent},
-      
       {path: 'library-add-to-shelf/:id', component: LibraryAddToShelfComponent},
       {path: 'library-remove-to-shelf/:id/:shelfIds', component: LibraryRemoveToShelfComponent},
       {path: 'library-remove-all-shelves', component: LibraryRemoveAllComponent},
 
-      {path: 'shelf-all',component: ShelfListComponent},
       {path: 'shelf-delete/:id',component: ShelfDeleteComponent},
       {path: 'shelf-list',component: ShelfListComponent},
-      {path: 'shelf-add-to-book/:id', component: ShelfAddToBookComponent},
+      { path: 'shelf-add-to-book/:id', component: ShelfAddToBookComponent},
 
-      {path: 'book-all', component: BookListComponent},
       {path: 'book-list', component:BookListComponent},
       {path: 'book-delete/:id', component: BookDeleteComponent},
       {path: 'book-details/:id', component: BookDetailsComponent},

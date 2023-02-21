@@ -1,1 +1,21 @@
-<p>book-details works!</p>
+<h3 align = "center"> View Book Details</h3>
+<div align = "center">
+    <div>
+        <label> <b> ID: </b></label> {{book.id}}
+    </div>
+    <div>
+        <label> <b> Name: </b></label> {{book.name}}
+    </div>
+    <div>
+        <label> <b> Author: </b></label> {{book.author}}
+    </div>
+    <div>
+        <label> <b> Page Number: </b></label> {{book.pageNumber}}
+    </div>
+    <div>
+        <label> <b> Category: </b></label> {{book.category}}
+    </div>
+    <div>
+        <button (click)="onSubmit()" class="btn btn-info">Go Back</button>
+    </div>
+</div>

@@ -26,6 +26,6 @@ export class ShelfDetailsComponent {
   }
 
   onSubmit() : void {
-    this.router.navigate(['shelf-all']);
+    this.router.navigate(['shelf-list']);
   }
 }

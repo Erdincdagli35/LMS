@@ -52,4 +52,8 @@ export class ShelfListComponent {
     detailsShelf(id: number){
       this.router.navigate(['/shelf-details',id]);
     }
+
+    addToBook(id : number){
+      this.router.navigate(['/shelf-add-to-book',id]);
+    }
 }

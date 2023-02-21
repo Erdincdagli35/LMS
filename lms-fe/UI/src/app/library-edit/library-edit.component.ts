@@ -39,6 +39,6 @@ export class LibraryEditComponent{
     }
 
     goToList() {
-      this.router.navigate(['libraries-all']);
+      this.router.navigate(['library-list']);
     }
 }

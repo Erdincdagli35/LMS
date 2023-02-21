@@ -7,6 +7,7 @@
                 <th>Name</th>
                 <th>Storage</th>
                 <th>Actions</th>
+                <th>Book Action</th>
             </tr>
         </thead>
         <tbody>
@@ -18,6 +19,7 @@
                     <button (click)="updateShelf(shelf.id)" class="btn btn-danger">Update</button> &nbsp;
                     <button (click)="detailsShelf(shelf.id)" class="btn btn-danger">Details</button>
                 </td>
+                <td><button (click)="addToBook(shelf.id)" class="btn btn-danger">Add Book</button></td>
             </tr>
         </tbody>
     

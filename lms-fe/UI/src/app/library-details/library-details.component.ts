@@ -25,6 +25,6 @@ export class LibraryDetailsComponent {
   }
 
   onSubmit() : void {
-    this.router.navigate(['libraries-all']);
+    this.router.navigate(['library-list']);
   }
 }

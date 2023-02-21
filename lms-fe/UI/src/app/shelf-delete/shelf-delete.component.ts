@@ -34,7 +34,7 @@ export class ShelfDeleteComponent {
     }
 
     goToList() {
-      this.router.navigate(['shelf-all']);
+      this.router.navigate(['shelf-list']);
     }
 
 }

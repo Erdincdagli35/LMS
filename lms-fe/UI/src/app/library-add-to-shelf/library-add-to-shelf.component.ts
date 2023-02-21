@@ -35,7 +35,7 @@ export class LibraryAddToShelfComponent {
   }
 
   goToLibraryList() {
-    this.router.navigate(['libraries-all']); 
+    this.router.navigate(['library-list']); 
   }
   
   onSubmit() {

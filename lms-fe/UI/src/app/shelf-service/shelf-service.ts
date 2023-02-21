@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import { Library } from '../models/library';
+import { Book } from '../models/book';
 import { Shelf } from '../models/shelf';
 
 @Injectable({
@@ -10,7 +10,8 @@ import { Shelf } from '../models/shelf';
 })
 export class ShelfService {
   private baseURL = "http://localhost:8080/shelves";
-  
+  private addToShelfURL = "http://localhost:8080/shelves/addBook";
+
   constructor(private httpClient: HttpClient) { }
 
   getShelfList(): Observable<Shelf[]> {
@@ -27,5 +28,9 @@ export class ShelfService {
   
   updateShelf(shelf: Shelf): Observable<Object> {
     return this.httpClient.put(this.baseURL, shelf);
+  }
+
+  addToBook(id : number, book : Book): Observable<Object>{
+    return this.httpClient.post(`${this.addToShelfURL}/${id}`,book);
   }
 }
