@@ -60,7 +60,9 @@ body {font-family: "Lato", sans-serif}
             <div class="w3-container w3-white">
                 <p><b>Book</b></p>
                 <p>Present the books and other process for books</p>
-                <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('libraryModal').style.display='block'">Go Book</button>
+                <button class="w3-button w3-black w3-margin-bottom">
+                    <a routerLink="/book-list" routerLinkActive="active" ariaCurrentWhenActive="page">Go Book</a>
+                </button>
             </div>
             </div>
         </div>

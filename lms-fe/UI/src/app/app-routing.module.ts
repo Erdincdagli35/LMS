@@ -16,6 +16,11 @@ import { ShelfListComponent } from './shelf-list/shelf-list.component';
 import { ShelfDeleteComponent } from './shelf-delete/shelf-delete.component';
 import { ShelfDetailsComponent } from './shelf-details/shelf-details.component';
 import { ShelfEditComponent } from './shelf-edit/shelf-edit.component';
+import { ShelfAddToBookComponent } from './shelf-add-to-book/shelf-add-to-book.component';
+import { BookListComponent } from './book-list/book-list.component';
+import { BookDetailsComponent } from './book-details/book-details.component';
+import { BookDeleteComponent } from './book-delete/book-delete.component';
+import { BookEditComponent } from './book-edit/book-edit.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'library', pathMatch: 'full' },
@@ -33,7 +38,14 @@ const routes: Routes = [
   { path: 'shelf-all',component: ShelfListComponent},
   { path: 'shelf-delete/:id',component: ShelfDeleteComponent},
   { path: 'shelf-details/:id', component: ShelfDetailsComponent},
-  { path: 'shelf-update/:id', component: ShelfEditComponent}
+  { path: 'shelf-update/:id', component: ShelfEditComponent},
+
+  { path: 'shelf-add-to-book/:id', component: ShelfAddToBookComponent},
+
+  { path: 'book-all', component: BookListComponent},
+  { path: 'book-delete/:id', component: BookDeleteComponent},
+  { path: 'book-details/:id', component: BookDetailsComponent},
+  { path: 'book-update/:id', component:BookEditComponent}
 ];
 
 @NgModule({

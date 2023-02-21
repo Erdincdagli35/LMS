@@ -19,6 +19,13 @@ import { ShelfListComponent } from './shelf-list/shelf-list.component';
 import { ShelfDeleteComponent } from './shelf-delete/shelf-delete.component';
 import { ShelfDetailsComponent } from './shelf-details/shelf-details.component';
 import { ShelfEditComponent } from './shelf-edit/shelf-edit.component';
+import { ShelfAddToBookComponent } from './shelf-add-to-book/shelf-add-to-book.component';
+
+import { BookDeleteComponent } from './book-delete/book-delete.component';
+import { BookListComponent } from './book-list/book-list.component';
+import { BookDetailsComponent } from './book-details/book-details.component';
+import { BookEditComponent } from './book-edit/book-edit.component';
+
 
 @NgModule({
   declarations: [
@@ -34,7 +41,12 @@ import { ShelfEditComponent } from './shelf-edit/shelf-edit.component';
     ShelfListComponent,
     ShelfDeleteComponent,
     ShelfDetailsComponent,
-    ShelfEditComponent
+    ShelfEditComponent,
+    BookListComponent,
+    BookDetailsComponent,
+    BookEditComponent,
+    ShelfAddToBookComponent,
+    BookDeleteComponent
     ],
   imports: [
     BrowserModule,
@@ -54,7 +66,14 @@ import { ShelfEditComponent } from './shelf-edit/shelf-edit.component';
 
       {path: 'shelf-all',component: ShelfListComponent},
       {path: 'shelf-delete/:id',component: ShelfDeleteComponent},
-      {path: 'shelf-list',component: ShelfListComponent}
+      {path: 'shelf-list',component: ShelfListComponent},
+      {path: 'shelf-add-to-book/:id', component: ShelfAddToBookComponent},
+
+      {path: 'book-all', component: BookListComponent},
+      {path: 'book-list', component:BookListComponent},
+      {path: 'book-delete/:id', component: BookDeleteComponent},
+      {path: 'book-details/:id', component: BookDetailsComponent},
+      {path: 'book-update/:id', component:BookEditComponent}
     ])
     ],
   providers: [],

@@ -1,5 +1,6 @@
 package com.edsoft.lms.service;
 
+import com.edsoft.lms.model.Book;
 import com.edsoft.lms.model.Shelf;
 
 import java.util.List;
@@ -14,4 +15,6 @@ public interface ShelfService {
     Shelf getById(Long id);
 
     List<Shelf> getByIds(Long[] id);
+
+    Long addToBook(Book book, Long shelfId);
 }
