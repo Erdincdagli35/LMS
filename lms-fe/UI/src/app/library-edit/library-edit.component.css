@@ -1,9 +1,7 @@
-form, th , td, h3, label {
+div, form, th , td, h3, label {
   border: 1px solid grey;
   border-collapse: collapse;
   padding: 5px;
-  display: flex;
-  justify-content: center;
 }
 
 table tr:nth-child(odd) {

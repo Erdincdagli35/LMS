@@ -1,21 +1,25 @@
-<h3 align = "center"> View Book Details</h3>
-<div align = "center">
-    <div>
-        <label> <b> ID: </b></label> {{book.id}}
-    </div>
-    <div>
-        <label> <b> Name: </b></label> {{book.name}}
-    </div>
-    <div>
-        <label> <b> Author: </b></label> {{book.author}}
-    </div>
-    <div>
-        <label> <b> Page Number: </b></label> {{book.pageNumber}}
-    </div>
-    <div>
-        <label> <b> Category: </b></label> {{book.category}}
-    </div>
-    <div>
-        <button (click)="onSubmit()" class="btn btn-info">Go Back</button>
-    </div>
+<h3 align="center">Book Details</h3>
+<div class="book" >
+    <table class="table mat-table">
+        <tr>
+            <th><label> <b> ID: </b></label></th>
+            <td>{{book.id}}</td>
+            </tr>
+            <tr>
+                <th><label> <b> Name: </b></label></th>
+                <td>{{book.name}}</td>
+            </tr>
+            <tr>
+                <tr>
+                <th><label> <b> Author: </b></label></th>
+                <td>{{book.author}}</td>
+            </tr>
+            <tr>
+            <tr>
+                <tr>
+                <th><label> <b> Page Number: </b></label></th>
+                <td>{{book.pageNumber}}</td>
+            </tr>
+            <tr>         
+    </table>
 </div>

@@ -23,7 +23,7 @@ export class ShelfAddToBookComponent {
 
   constructor(private shelfService: ShelfService, 
               private activetedRoute: ActivatedRoute, 
-              private router: Router,){}
+              private router: Router){}
 
   ngOnInit(): void {
     this.shelf.id = this.activetedRoute.snapshot.params['id'];
