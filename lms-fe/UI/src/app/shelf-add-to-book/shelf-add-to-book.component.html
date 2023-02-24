@@ -1,33 +1,28 @@
-<h3>Add Book</h3>
+<h3 align="center">Add Book</h3>
+<div class="shelf">
 <form (ngSubmit)="onSubmit()">
     <div class="form-group">
-        <b><label>Shelf ID : </label></b> 
-        <label>{{shelf.id}}</label>
+        <table class="table mat-table">
+            <tr>
+                <th><label> <b> ID: </b></label></th>
+                <td>{{shelf.id}}</td>
+            </tr>
+            <tr>
+                <th><label> <b> Name: </b></label></th>
+                <td><input type="text" class="form-control" id="name" [(ngModel)]="book.name" name="name"></td>
+            </tr>
+            <tr>
+                <th><label> <b> Author: </b></label></th>
+                <td><input type="text" class="form-control" id="author" [(ngModel)]="book.author" name="author"></td>
+            </tr>
+            <tr>
+                <th><label> <b>Page Number : </b></label></th>
+                <td><input type="text" class="form-control" id="pageNumber" [(ngModel)]="book.pageNumber" name="pageNumber"></td>
+            </tr>
+            <tr>
+                <td><label><button class="btn btn-success" type="submit">Submit</button></label></td>
+            </tr>
+        </table>
     </div>
-    &nbsp;
-    <div class="form-group">
-        <b><label>Name : </label></b>
-        <input type="text" class="form-control" id="name" [(ngModel)]="book.name" name="name">
-    </div>
-    &nbsp;
-    <div class="form-group">
-        <b><label>Author : </label></b>
-        <input type="text" class="form-control" id="author" [(ngModel)]="book.author" name="author"> <br>
-    </div>
-    &nbsp;
-    <div class="form-group">
-        <b><label>Page Number : </label></b>
-        <input type="text" class="form-control" id="pageNumber" [(ngModel)]="book.pageNumber" name="pageNumber"> <br>
-    </div>
-    &nbsp;
-    <div class="form-group">
-        <b><label>Category : </label></b>
-        <!--<input type="text" class="form-control" id="category" [(ngModel)]="book.category" name="category"> <br>-->
-        <select [(ngModel)]="selectedCategory">
-            <option *ngFor="let category of categories" [value]="category">{{category}}</option>
-          </select>
-    </div>
-    <div class="form-group">
-        <label><button class="btn btn-success" type="submit">Submit</button></label>
-    </div>    
-</form>
+    </form>
+</div>

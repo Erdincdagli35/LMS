@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Category } from '../models/Category';
 
 import { Shelf } from '../models/shelf';
 import { ShelfService } from '../shelf-service/shelf-service';
@@ -12,6 +13,9 @@ import { ShelfService } from '../shelf-service/shelf-service';
 export class ShelfEditComponent {
     shelfTemp : Shelf = new Shelf();
     shelf : Shelf = new Shelf();
+
+    selectedCategory : Category[] = Object.values(Category) ;
+    categories = Object.values(Category);
 
     constructor(private shelfService : ShelfService, 
                 private activetedRoute: ActivatedRoute, 
@@ -28,6 +32,8 @@ export class ShelfEditComponent {
     }
 
     onSubmit(){
+      console.log("ED : category : " + this.shelf.category);
+      
       this.shelfService.updateShelf(this.shelf)
                          .subscribe(data => {
         this.goToList();

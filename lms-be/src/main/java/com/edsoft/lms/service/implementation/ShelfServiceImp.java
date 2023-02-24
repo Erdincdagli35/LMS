@@ -31,6 +31,7 @@ public class ShelfServiceImp implements ShelfService {
     public Shelf edit(Shelf shelfTemp, Shelf shelf) {
         shelfTemp.setName(shelf.getName());
         shelfTemp.setStorage(shelf.getStorage());
+        shelfTemp.setCategory(shelf.getCategory());
         return shelfRepository.save(shelfTemp);
     }
 

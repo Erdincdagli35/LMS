@@ -21,8 +21,6 @@ public class Book {
 
     private String name;
 
-    private Category category;
-
     private Integer pageNumber;
 
     private String author;

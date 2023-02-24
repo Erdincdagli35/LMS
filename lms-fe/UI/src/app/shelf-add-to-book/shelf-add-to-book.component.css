@@ -1,0 +1,19 @@
+.shelf{
+    display: flex;
+    justify-content: center;
+  }
+  
+  div, form, th , td, h2, label {
+    padding: 5px;
+  }
+  
+  table tr:nth-child(odd) {
+    background-color: black;
+    color: white;
+  }
+  
+  table tr:nth-child(even) {
+    background-color: black;
+    color: white;
+  }
+  

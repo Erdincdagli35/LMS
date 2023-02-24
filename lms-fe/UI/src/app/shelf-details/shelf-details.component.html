@@ -1,15 +1,23 @@
 <h3 align = "center"> View Shelf Details</h3>
-<div align = "center">
-    <div>
-        <label> <b> ID: </b></label> {{shelf.id}}
-    </div>
-    <div>
-        <label> <b> Name: </b></label> {{shelf.name}}
-    </div>
-    <div>
-        <label> <b> Storage: </b></label> {{shelf.storage}}
-    </div>
-    <div>
-        <button (click)="onSubmit()" class="btn btn-info">Go Back</button>
-    </div>
+<div class="shelf" align="center">
+    <table class="table mat-table">
+        <tr>
+            <th><label> <b> ID: </b></label></th>
+            <td>{{shelf.id}}</td>
+            </tr>
+            <tr>
+                <th><label> <b> Name: </b></label></th>
+                <td>{{shelf.name}}</td>
+            </tr>
+            <tr>
+                <tr>
+                <th><label> <b> Category: </b></label></th>
+                <td>{{shelf.category}}</td>
+            </tr>
+            <tr>
+                <tr>
+                <th><label> <b> Storage: </b></label></th>
+                <td>{{shelf.storage}}</td>
+            </tr>
+    </table>
 </div>

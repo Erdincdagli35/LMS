@@ -1,4 +1,3 @@
-import { Category } from "./Category";
 import { Shelf } from "./shelf";
 
 export class Book {
@@ -8,5 +7,4 @@ export class Book {
     author : string = "author";
     shelfId : number = 0;
     shelfName : string = "shelfName";
-    category: Category = Category.Action;
   } 

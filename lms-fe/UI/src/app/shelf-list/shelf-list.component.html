@@ -5,6 +5,7 @@
             <tr>
                 <th>ID</th>
                 <th>Name</th>
+                <th>Category</th>
                 <th>Storage</th>
                 <th>Actions</th>
                 <th>Book Action</th>
@@ -14,6 +15,7 @@
             <tr *ngFor="let shelf of shelves">
                 <td>{{ shelf.id }}</td>
                 <td>{{ shelf.name }}</td>
+                <td>{{ shelf.category }}</td>
                 <td>{{ shelf.storage }}</td>
                 <td><button (click)="deleteShelf(shelf.id)" class="btn btn-danger">Delete</button> &nbsp;
                     <button (click)="updateShelf(shelf.id)" class="btn btn-danger">Update</button> &nbsp;
