@@ -1,16 +1,19 @@
-<div>
-    <h3>Create Library</h3>
-    <form (ngSubmit)="onSubmit()">
-        <div class="form-group">
-            <label>Name : </label>
-            <input type="text" class="form-control" id="name" [(ngModel)]="library.name" name="name">
-        </div>
-
-        <div class="form-group">
-            <label>Capacity : </label>
-            <input type="text" class="form-control" id="capacity" [(ngModel)]="library.capacity" name="capacity">
-
-        </div>
-        <button class="btn btn-success" type="submit">Submit</button>
+<div class="form-container">
+    <h3>Library: create</h3>
+    <hr>
+    <form>
+    <div class="form-field">
+        <label for="name">Name :</label>
+        <input type="text" id="name" name="name" [(ngModel)]="library.name" required>
+      </div>
+      <div class="form-field">
+        <label for="capacity">Capacity :</label>
+        <input type="text" id="capacity" name="capacity" [(ngModel)]="library.capacity" required>
+      </div>
+      <div class="form-buttons">
+        <button class="btn btn-success" type="submit" (click)="onSubmit()">Create</button>
+        <button class="btn btn-success" type="reset">Reset</button>
+        <button class="btn btn-success" type="submit" (click)="goToLibraryList()">Libraries</button>
+      </div>
     </form>
-</div>
+  </div>

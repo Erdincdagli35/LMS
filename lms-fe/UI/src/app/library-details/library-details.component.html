@@ -1,15 +1,21 @@
-<h3 align = "center"> View Library Details</h3>
-<div align = "center">
-    <div>
-        <label> <b> ID: </b></label> {{library.id}}
+<hr>
+<table>
+    <thead>
+      <tr>
+        <th>ID:</th>
+        <th>Capacity:</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{library.name}}</td>
+        <td>{{library.capacity}}</td>
+      </tr>
+      <tr>
+        <div class="form-buttons">
+        <td><button (click)="onSubmit()" class="btn btn-info">Libraries</button></td>
     </div>
-    <div>
-        <label> <b> Name: </b></label> {{library.name}}
-    </div>
-    <div>
-        <label> <b> Capacity: </b></label> {{library.capacity}}
-    </div>
-    <div>
-        <button (click)="onSubmit()" class="btn btn-info">Go Back</button>
-    </div>
-</div>
+      </tr>
+    </tbody>
+  </table>
+  

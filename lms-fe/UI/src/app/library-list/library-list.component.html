@@ -1,14 +1,14 @@
-<div class="library" align="center">
+<div class="table-container" style="text-align: center;">
 <h2 >Library List</h2> 
-<table class="table mat-table">
-    <thead class="table">
+<table>
+    <thead>
         <tr>
             <th>ID</th>
             <th>Name</th>
             <th>Capacity</th>
             <th>Actions</th>
             <th>Shelf Actions</th>
-            <th><button (click)="saveLibrary(library)" class="btn btn-info">Add</button></th>
+            <th><button class="button" type="submit" (click)="saveLibrary(library)" class="btn btn-info">Add</button></th>
         </tr>
     </thead>
     <tbody>
@@ -16,13 +16,13 @@
             <td>{{ library.id }}</td>
             <td>{{ library.name }}</td>
             <td>{{ library.capacity }}</td>
-            <td><button (click)="deleteLibrary(library.id)" class="btn btn-danger">Delete</button> &nbsp;
-                <button (click)="updateLibrary(library.id)" class="btn btn-danger">Update</button> &nbsp;
-                <button (click)="detailsLibrary(library.id)" class="btn btn-danger">Details</button>
+            <td><button class="btn add" type="submit" (click)="deleteLibrary(library.id)" class="btn btn-danger">Delete</button> &nbsp;
+                <button class="button" type="submit" (click)="updateLibrary(library.id)" class="btn btn-danger">Update</button> &nbsp;
+                <button class="button" type="submit" (click)="detailsLibrary(library.id)" class="btn btn-danger">Details</button>
             </td>
-            <td><button (click)="addToShelf(library.id)" class="btn btn-danger">Add</button> &nbsp;
-                <button (click)="removeToShelf(library.id,shelfIds)" class="btn btn-danger">Delete</button> &nbsp;
-                <button (click)="removeAllShelves(library.id)" class="btn btn-danger">Delete All</button>
+            <td><button class="button" type="submit" (click)="addToShelf(library.id)" class="btn btn-danger">Add</button> &nbsp;
+                <button class="button" type="submit" (click)="removeToShelf(library.id,shelfIds)" class="btn btn-danger">Delete</button> &nbsp;
+                <button class="button" type="submit" (click)="removeAllShelves(library.id)" class="btn btn-danger">Delete All</button>
             </td>
         </tr>
     </tbody>
@@ -31,8 +31,8 @@
 
 <hr> 
 <h2 >Library - Shelf List </h2>
-<table class="table">
-    <thead class="table-dark">
+<table>
+    <thead>
         <tr>
             <th>Library ID</th>
             <th>Library Name</th>

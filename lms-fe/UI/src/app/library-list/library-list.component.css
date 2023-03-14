@@ -1,17 +1,93 @@
-table, th , td {
-    border: 1px solid grey;
-    border-collapse: collapse;
-    padding: 5px;
-    text-align: center;
-  }
-  
-  table tr:nth-child(odd) {
-    background-color: black;
-    color: white;
-  }
-  
-  table tr:nth-child(even) {
-    background-color: black;
-    color: white;
-  }
-  
+.table-container {
+  text-align: center;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+th {
+  background-color: black;
+  color: #ffffff;
+}
+
+td:last-child {
+  text-align: center;
+}
+
+.btn {
+  display: inline-block;
+  border-radius: 3px;
+  font-size: 16px;
+  padding: 10px 20px;
+  color: #ffffff;
+  background-color: #333333;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #555555;
+}
+
+.btn.add:before {
+  content: "\f067";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  margin-right: 5px;
+}
+
+.btn.delete:before {
+  content: "\f1f8";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  margin-right: 5px;
+}
+
+.btn.update:before {
+  content: "\f044";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  margin-right: 5px;
+}
+
+.btn.details:before {
+  content: "\f05a";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  margin-right: 5px;
+}
+
+.btn.add-shelf:before {
+  content: "\f055";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  margin-right: 5px;
+}
+
+.btn.delete-shelf:before {
+  content: "\f1f8";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  margin-right: 5px;
+}
+
+.btn.delete-all-shelves:before {
+  content: "\f1f8";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  margin-right: 5px;
+}

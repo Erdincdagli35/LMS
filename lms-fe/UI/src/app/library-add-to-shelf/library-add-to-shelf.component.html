@@ -1,28 +1,31 @@
-   <h3>Add Shelf</h3>
-    <form (ngSubmit)="onSubmit()">
-        <div class="form-group">
-            <b><label>Library ID</label></b> 
+   <div class="form-container">
+   <h3>Library : add Shelf</h3>
+   <hr>
+    <form>
+        <div class="form-field">
+            <label for="id">Library ID : </label>
             <label>{{library.id}}</label>
         </div>
         &nbsp;
-        <div class="form-group">
+        <div class="form-field">
             <b><label>Name</label></b>
             <input type="text" class="form-control" id="name" [(ngModel)]="shelf.name" name="name">
         </div>
         &nbsp;
-        <div class="form-group">
+        <div class="form-field">
             <b><label>Storage</label></b>
             <input type="text" class="form-control" id="storage" [(ngModel)]="shelf.storage" name="storage"> <br>
         </div>
         &nbsp;
-        <div class="form-group">
+        <div class="form-field">
             <b><label>Capacity</label></b>
             <label>{{library.capacity}}</label>
         </div>
         &nbsp;
-        <div class="form-group">
-            <label><button class="btn btn-success" type="reset">Price</button></label>
-            <label><button class="btn btn-success" type="submit">Submit</button></label>
-        </div>
-        
+        <div class="form-buttons">
+            <label><button class="btn btn-success" (click)="onSubmit()">Add</button></label>
+            <label><button class="btn btn-success" type="reset">Reset</button></label>
+            <label><button class="btn btn-success" type="submit" (click)="goToLibraryList()">Libraries</button></label>
+        </div>        
     </form>
+</div>

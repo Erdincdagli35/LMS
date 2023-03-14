@@ -98,6 +98,7 @@ public class LibraryController {
                     .body("There is not a Library id : " + libraryId);
         }
 
+
         if (!libraryValidation.libraryCapacityCheckOut(libraryId, shelf)) {
             return ResponseEntity
                     .status(HttpStatus.INTERNAL_SERVER_ERROR)
