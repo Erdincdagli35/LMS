@@ -48,4 +48,8 @@ public class LibraryValidation {
         totalStorage += shelf.getStorage();
         return libraryRepository.findOneById(libraryId).getCapacity() >= totalStorage;
     }
+
+    public boolean notEnterZeroForStorage(Shelf shelf) {
+        return shelf.getStorage() != 0;
+    }
 }

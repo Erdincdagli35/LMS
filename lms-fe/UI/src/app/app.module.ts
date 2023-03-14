@@ -27,6 +27,7 @@ import { BookDetailsComponent } from './book-details/book-details.component';
 import { BookEditComponent } from './book-edit/book-edit.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +47,7 @@ import { BookEditComponent } from './book-edit/book-edit.component';
     BookDetailsComponent,
     BookEditComponent,
     ShelfAddToBookComponent,
-    BookDeleteComponent
+    BookDeleteComponent,
     ],
   imports: [
     BrowserModule,

@@ -21,6 +21,8 @@ public class Library {
 
     private Integer capacity;
 
+    private Integer currentCapacity;
+
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "library_id")
     private List<Shelf> shelves = new ArrayList<>();

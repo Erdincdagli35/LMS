@@ -28,18 +28,31 @@ public class LibraryServiceImp implements LibraryService {
 
     @Override
     public Long create(Library library) {
+        library.setCurrentCapacity(library.getCapacity());
         return libraryRepository.save(library).getId();
     }
 
+    public void setCurrentCapacityWhenSavedTheShelf(Library library){
+        Integer totalShelfStorage = 0;
+        List<Shelf> shelfList = library.getShelves();
+        for (Shelf shelf: shelfList)
+            totalShelfStorage+= shelf.getStorage();
+
+        library.setCurrentCapacity(library.getCapacity() - totalShelfStorage);
+        libraryRepository.save(library);
+    }
     @Override
     public List<Library> getAll(String name) {
-        return name == null ? libraryRepository.findAllByOrderById() : libraryRepository.findAllByName(name);
+        List<Library> libraries = (name == null) ? libraryRepository.findAllByOrderById() : libraryRepository.findAllByName(name);
+        for (Library library : libraries) setCurrentCapacityWhenSavedTheShelf(library);
+        return libraries;
     }
 
     @Override
     public Library edit(Library libraryTemp, Library library) {
         libraryTemp.setName(library.getName());
         libraryTemp.setCapacity(library.getCapacity());
+        libraryTemp.setCurrentCapacity(library.getCapacity());
 
         return libraryRepository.save(libraryTemp);
     }
@@ -59,7 +72,6 @@ public class LibraryServiceImp implements LibraryService {
     public Long addToShelf(Shelf shelf, Long libraryId) {
         Library library = getById(libraryId);
         shelf.setLibrary(library);
-
         //library.getShelves().addAll(shelf);
         shelfRepository.save(shelf);
         libraryRepository.save(library);
@@ -95,7 +107,6 @@ public class LibraryServiceImp implements LibraryService {
 
         return shelveIds;
     }
-
 
     @Override
     public void duplicate() {

@@ -98,6 +98,11 @@ public class LibraryController {
                     .body("There is not a Library id : " + libraryId);
         }
 
+        if (!libraryValidation.notEnterZeroForStorage(shelf)){
+            return ResponseEntity
+                    .status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("Library capacity is not enough.");
+        }
 
         if (!libraryValidation.libraryCapacityCheckOut(libraryId, shelf)) {
             return ResponseEntity
