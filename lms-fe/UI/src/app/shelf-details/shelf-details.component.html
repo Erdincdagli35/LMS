@@ -1,23 +1,22 @@
-<h3 align = "center"> View Shelf Details</h3>
-<div class="shelf" align="center">
-    <table class="table mat-table">
+<hr>
+    <table>
+        <thead>
         <tr>
-            <th><label> <b> ID: </b></label></th>
-            <td>{{shelf.id}}</td>
+            <th>ID: </th>
+            <th>Name: </th>
+            <th>Storage: </th>
             </tr>
+        </thead>
+        <tbody>
             <tr>
-                <th><label> <b> Name: </b></label></th>
+                <td>{{shelf.id}}</td>
                 <td>{{shelf.name}}</td>
-            </tr>
-            <tr>
-                <tr>
-                <th><label> <b> Category: </b></label></th>
-                <td>{{shelf.category}}</td>
-            </tr>
-            <tr>
-                <tr>
-                <th><label> <b> Storage: </b></label></th>
                 <td>{{shelf.storage}}</td>
             </tr>
+            <tr>
+                <div class="form-buttons">
+                    <td><button (click)="onSubmit()" class="btn btn-info">Shelves</button></td>
+                </div>
+            </tr>
+        </tbody>
     </table>
-</div>

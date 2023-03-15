@@ -5,6 +5,7 @@ import com.edsoft.lms.model.Shelf;
 import com.edsoft.lms.repository.ShelfRepository;
 import com.edsoft.lms.service.ShelfService;
 import com.edsoft.lms.validation.BookValidation;
+import com.edsoft.lms.validation.ShelfValidation;
 import lombok.AllArgsConstructor;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.http.HttpStatus;
@@ -32,11 +33,13 @@ public class ShelfController {
     private final ShelfService shelfService;
     private final ShelfRepository shelfRepository;
 
+    private final ShelfValidation shelfValidation;
     private final BookValidation bookValidation;
 
+
     @GetMapping
-    public ResponseEntity<List<Shelf>> getAll(@RequestParam(value = "name", required = false) String name) {
-        return ResponseEntity.ok(shelfService.getAll(name));
+    public ResponseEntity<List<Shelf>> getAll() {
+        return ResponseEntity.ok(shelfService.getAll());
     }
 
     @PutMapping
@@ -47,6 +50,12 @@ public class ShelfController {
                     .status(HttpStatus.INTERNAL_SERVER_ERROR)
                     .body("There is not a shelf id : " + shelf.getId());
         }
+        if (!shelfValidation.validateStorageByCapacity(shelfTemp,shelf)){
+            return ResponseEntity
+                    .status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("There is not a shelf id : " + shelf.getId());
+        }
+
         return ResponseEntity.ok(shelfService.edit(shelfTemp, shelf));
     }
 

@@ -113,30 +113,6 @@ public class LibraryController {
         return ResponseEntity.ok(libraryService.addToShelf(shelf, libraryId));
     }
 
-    @DeleteMapping("removeShelf/{libraryId}/{shelfIds}")
-    public ResponseEntity removeToShelf(@PathVariable Long libraryId,
-                                        @PathVariable Long[] shelfIds) {
-        if (!libraryValidation.existsLibraryById(libraryId)) {
-            return ResponseEntity
-                    .status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body("There is not a Library id : " + libraryId);
-        }
-
-        if (!shelfValidation.existsShelfById(shelfIds)) {
-            return ResponseEntity
-                    .status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body("There is not a Shelf id : " + Arrays.toString(shelfIds));
-        }
-
-        if (!libraryValidation.existsLibraryRelatedShelf(libraryId, shelfIds)) {
-            return ResponseEntity
-                    .status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body("There is not a related Library with Shelf");
-        }
-
-        return ResponseEntity.ok(libraryService.removeToShelf(libraryId, shelfIds));
-    }
-
     @DeleteMapping("removeAllShelf/{libraryId}")
     public ResponseEntity removeToShelf(@PathVariable Long libraryId) {
         if (!libraryValidation.existsLibraryById(libraryId)) {

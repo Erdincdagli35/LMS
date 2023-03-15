@@ -1,26 +1,23 @@
-<h3 align="center">Update Book</h3>
-<div class="book">
-    <form (ngSubmit)="onSubmit()">
-            <table class="table mat-table">
-                <tr>
-                    <th><label> <b> Name : </b></label></th>
-                     <td> <input type="text" class="form-control" id="name" 
-                        [(ngModel)]="book.name" name="name"></td>
-                </tr>
-                <tr>
-                    <th><label> <b> Author : </b></label></th>
-                     <td> <input type="text" class="form-control" id="name" 
-                        [(ngModel)]="book.author" name="author"></td>
-                </tr>
-                <tr>
-                    <th><label>Page Number : </label></th>
-                     <td> <input type="text" class="form-control" id="Storage" 
-                        [(ngModel)]="book.pageNumber" name="pageNumber"></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td><button class="btn btn-success" type="submit">Update</button></td>
-                </tr>
-        </table>
+<div class="form-container">
+    <h3>Book : update</h3>
+    <hr>
+    <form>
+        <div class="form-field">
+                    <label for="name">Name :</label>
+                    <input type="text" id="name" name="name" [(ngModel)]="book.name" required>
+        </div>
+                <div class="form-field">
+                    <label>Author :</label>
+                     <input type="text" class="form-control" id="name" [(ngModel)]="book.author" name="author">
+                </div>
+                <div class="form-field">
+                    <label>Page Number :</label>
+                     <input type="text" class="form-control" id="Storage" [(ngModel)]="book.pageNumber" name="pageNumber">
+                </div>
+                <div class="form-buttons">
+                    <button class="btn btn-success" type="submit" (click)="onSubmit()">Update</button>
+                    <button class="btn btn-success" type="reset">Reset</button>
+                    <button class="btn btn-success" type="submit" (click)="goToList()">Books</button>
+                </div>
     </form>
 </div>

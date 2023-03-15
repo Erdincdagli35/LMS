@@ -1,11 +1,11 @@
-<div class="library" align="center">
+<hr>
+<div class="table-container" style="text-align: center;">
     <h2 >Shelf List</h2> 
-    <table class="table mat-table">
-        <thead class="table">
+    <table>
+        <thead>
             <tr>
                 <th>ID</th>
                 <th>Name</th>
-                <th>Category</th>
                 <th>Storage</th>
                 <th>Actions</th>
                 <th>Book Action</th>
@@ -15,7 +15,6 @@
             <tr *ngFor="let shelf of shelves">
                 <td>{{ shelf.id }}</td>
                 <td>{{ shelf.name }}</td>
-                <td>{{ shelf.category }}</td>
                 <td>{{ shelf.storage }}</td>
                 <td><button (click)="deleteShelf(shelf.id)" class="btn btn-danger">Delete</button> &nbsp;
                     <button (click)="updateShelf(shelf.id)" class="btn btn-danger">Update</button> &nbsp;
@@ -24,18 +23,17 @@
                 <td><button (click)="addToBook(shelf.id)" class="btn btn-danger">Add Book</button></td>
             </tr>
         </tbody>
-    
     </table>
-        <hr> 
-    <!--<h2 >Shelf - Book List </h2>
-    <table class="table">
-        <thead class="table-dark">
+    
+    <hr> 
+    <h2 >Shelf - Book List </h2>
+    <table>
+        <thead>
             <tr>
                 <th>Shelf ID</th>
                 <th>Shelf Name</th>
                 <th>ID</th>
                 <th>Name</th>
-                <th>Catogory</th>
                 <th>Page Number</th>
                 <th>Author</th>
             </tr>
@@ -46,11 +44,9 @@
                     <td>{{ book.shelfName}}</td>
                     <td>{{ book.id }}</td>
                     <td>{{ book.name }}</td>
-                    <td>{{ book.category }}</td>
                     <td>{{ book.pageNumber }}</td>
                     <td>{{ book.author }}</td>
                 </tr>
-            
         </tbody>
-    </table>-->
-    </div>
+    </table>
+</div>

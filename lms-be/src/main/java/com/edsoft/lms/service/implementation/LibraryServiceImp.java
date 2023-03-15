@@ -79,19 +79,6 @@ public class LibraryServiceImp implements LibraryService {
     }
 
     @Override
-    public List<Long> removeToShelf(Long libraryId, Long[] shelfIds) {
-        Library library = getById(libraryId);
-
-        for (Long shelfId : shelfIds) {
-            shelfService.getById(shelfId).setLibrary(null);
-            shelfRepository.save(shelfService.getById(shelfId));
-        }
-
-        libraryRepository.save(library);
-        return Arrays.stream(shelfIds).toList();
-    }
-
-    @Override
     public List<Long> removeAllShelf(Long libraryId) {
         Library library = getById(libraryId);
 
@@ -103,6 +90,7 @@ public class LibraryServiceImp implements LibraryService {
             shelfRepository.save(shelf);
         }
         library.setShelves(null);
+        library.setCurrentCapacity(library.getCapacity());
         libraryRepository.save(library);
 
         return shelveIds;

@@ -22,8 +22,8 @@ export class BookDeleteComponent {
       this.book.id = this.activetedRoute.snapshot.params['id'];
 
       this.bookService.deleteBook(this.book.id).subscribe( data => {
-          this.getBook();
-          this.goToList();
+        this.goToList();  
+        this.getBook();
         })
     }
 

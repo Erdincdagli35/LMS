@@ -1,5 +1,4 @@
 import { Book } from "./book";
-import { Category } from "./Category";
 
 export class Shelf {
     id : number = 0;
@@ -8,5 +7,6 @@ export class Shelf {
     books : Book[] = [];
     libraryId : number = 0;
     libraryName : string = "libraryName";
-    category!: Category;
+    libraryCapacity : number = 0;
+    libraryCurrentCapacity : number =0;
   } 

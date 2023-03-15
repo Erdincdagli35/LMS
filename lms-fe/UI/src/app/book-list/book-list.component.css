@@ -1,18 +1,48 @@
-.book{
-  display: flex;
-  justify-content: center;
+.table-container {
+  text-align: center;
 }
 
-div, form, th , td, h2, label {
-  padding: 5px;
+h2 {
+  margin-top: 0;
 }
 
-table tr:nth-child(odd) {
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+th {
   background-color: black;
+  color: #ffffff;
+}
+
+td:last-child {
+  text-align: center;
+}
+
+.table-container button {
+  background-color: #060b06; 
+  border: none;
   color: white;
+  padding: 10px 25px; 
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px; 
+  transition-duration: 0.4s; 
 }
 
-table tr:nth-child(even) {
-  background-color: black;
+.table-container button:hover {
+  background-color: #666e67; 
   color: white;
 }

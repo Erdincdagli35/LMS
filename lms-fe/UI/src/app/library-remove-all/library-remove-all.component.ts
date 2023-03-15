@@ -38,6 +38,6 @@ export class LibraryRemoveAllComponent {
 
 
     goToList() {
-      this.router.navigate(['libraries-all']);
+      this.router.navigate(['library-list']);
     }
 }

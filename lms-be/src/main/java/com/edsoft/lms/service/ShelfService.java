@@ -6,7 +6,7 @@ import com.edsoft.lms.model.Shelf;
 import java.util.List;
 
 public interface ShelfService {
-    List<Shelf> getAll(String name);
+    List<Shelf> getAll();
 
     Shelf edit(Shelf shelfTemp,Shelf shelf);
 

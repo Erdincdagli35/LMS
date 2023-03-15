@@ -4,6 +4,7 @@ import com.edsoft.lms.model.Book;
 import com.edsoft.lms.model.Library;
 import com.edsoft.lms.model.Shelf;
 import com.edsoft.lms.repository.BookRepository;
+import com.edsoft.lms.repository.LibraryRepository;
 import com.edsoft.lms.repository.ShelfRepository;
 import com.edsoft.lms.service.ShelfService;
 import lombok.AllArgsConstructor;
@@ -21,22 +22,35 @@ import java.util.Set;
 public class ShelfServiceImp implements ShelfService {
     private final BookRepository bookRepository;
     private final ShelfRepository shelfRepository;
+    private final LibraryRepository libraryRepository;
 
     @Override
-    public List<Shelf> getAll(String name) {
-        return name == null ? shelfRepository.findAllByOrderByIdDesc() : shelfRepository.findAllByName(name);
+    public List<Shelf> getAll() {
+        List<Shelf> shelves = shelfRepository.findAllByOrderByIdDesc();
+        List<Shelf> relatedShelves = new ArrayList<>();
+
+        for (Shelf shelf : shelves){
+            if (shelf.getLibrary() != null){
+                relatedShelves.add(shelf);
+            }
+        }
+        return relatedShelves;
     }
 
     @Override
     public Shelf edit(Shelf shelfTemp, Shelf shelf) {
         shelfTemp.setName(shelf.getName());
         shelfTemp.setStorage(shelf.getStorage());
-        shelfTemp.setCategory(shelf.getCategory());
+
         return shelfRepository.save(shelfTemp);
     }
 
     @Override
     public Long delete(Shelf shelf) {
+        Library library = shelf.getLibrary();
+        library.setCurrentCapacity(library.getCapacity() - shelf.getStorage());
+        libraryRepository.save(library);
+        shelf.setLibrary(null);
         shelfRepository.delete(shelf);
         return shelf.getId();
     }

@@ -9,7 +9,6 @@ import { LibraryDeleteComponent } from './library-delete/library-delete.componen
 import { LibraryDetailsComponent } from './library-details/library-details.component'; 
 
 import { LibraryAddToShelfComponent } from './library-add-to-shelf/library-add-to-shelf.component';
-import { LibraryRemoveToShelfComponent } from './library-remove-to-shelf/library-remove-to-shelf.component';
 import { LibraryRemoveAllComponent } from './library-remove-all/library-remove-all.component';
 
 import { ShelfListComponent } from './shelf-list/shelf-list.component';
@@ -31,7 +30,6 @@ const routes: Routes = [
   { path: 'library-delete/:id', component: LibraryDeleteComponent},
   { path: 'library-details/:id', component: LibraryDetailsComponent},
   { path: 'library-add-to-shelf/:id', component: LibraryAddToShelfComponent},
-  { path: 'library-remove-to-shelf/:id/:shelfIds', component: LibraryRemoveToShelfComponent},
   { path: 'library-remove-all-shelves/:id', component: LibraryRemoveAllComponent},
   
   { path: 'shelf-list',component: ShelfListComponent},

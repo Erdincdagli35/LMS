@@ -18,8 +18,6 @@ public interface LibraryService {
 
     Long addToShelf(Shelf shelf, Long libraryId);
 
-    List<Long> removeToShelf(Long libraryId, Long[] shelfIds);
-
     List<Long> removeAllShelf(Long libraryId);
 
     void duplicate();

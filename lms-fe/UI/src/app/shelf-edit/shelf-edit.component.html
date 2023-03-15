@@ -1,24 +1,27 @@
-<h3 align="center">Update Shelf</h3> 
-<div class="shelf">
-    <form (ngSubmit)="onSubmit()">
-        <table class="table mat-table">
-            <tr>
-                <th><label> <b> Name : </b></label></th>
-                 <td> <input type="text" class="form-control" id="name" 
-                    [(ngModel)]="shelf.name" name="name"></td>
-            </tr>
-            <tr>
-            <th><label> <b> Storage : </b></label></th>
-            <td><input type="text" class="form-control" id="Storage" 
-                [(ngModel)]="shelf.storage" name="storage"></td>
-            </tr>
-            <tr>
-                <th><b><label>Category : </label></b></th>
-                <td><select [(ngModel)]="selectedCategory">
-                    <option *ngFor="let category of categories" [value]="category">{{category}}</option>
-                  </select></td>
-            </tr>
-            <td><button class="btn btn-success" type="submit">Update</button></td>
-        </table>
+<div class="form-container">
+    <h3>Shelf: update</h3>
+    <hr>
+    <form>
+        <div class="form-field">
+            <label>Name: </label>
+            <input type="text" id="name" [(ngModel)]="shelf.name" name="name" required>
+        </div>
+        <div class="form-field">
+            <label>Storage: </label>
+            <input type="text" id="Storage" [(ngModel)]="shelf.storage" name="storage" required>
+        </div>
+        <div class="form-field">
+            <b><label>Capacity</label></b>
+            <label>{{shelf.libraryCapacity}}</label>
+        </div>
+        <div class="form-field">
+            <b><label>Current Capacity</label></b>
+            <label>{{shelf.libraryCurrentCapacity}}</label>
+        </div>
+        <div class="form-buttons">
+            <button class="btn btn-success" type="submit" (click)="onSubmit()">Update</button>
+            <button class="btn btn-success" type="reset">Reset</button>
+            <button class="btn btn-success" type="submit" (click)="goToList()">Shelves</button>
+          </div>
     </form>
 </div>

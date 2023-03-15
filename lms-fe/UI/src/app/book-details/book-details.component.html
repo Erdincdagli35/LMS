@@ -1,25 +1,24 @@
-<h3 align="center">Book Details</h3>
-<div class="book" >
-    <table class="table mat-table">
+<hr>    
+    <table>
+        <thead>
         <tr>
-            <th><label> <b> ID: </b></label></th>
-            <td>{{book.id}}</td>
+            <th>ID: </th>
+            <th>Name: </th>
+            <th>Author: </th>
+            <th>Page Number: </th>
             </tr>
+            </thead>
+            <tbody>
             <tr>
-                <th><label> <b> Name: </b></label></th>
+                <th>{{book.id}}</th>
                 <td>{{book.name}}</td>
-            </tr>
-            <tr>
-                <tr>
-                <th><label> <b> Author: </b></label></th>
                 <td>{{book.author}}</td>
-            </tr>
-            <tr>
-            <tr>
-                <tr>
-                <th><label> <b> Page Number: </b></label></th>
                 <td>{{book.pageNumber}}</td>
             </tr>
-            <tr>         
+            <tr>
+                <div class="form-buttons">
+                    <td><button (click)="onSubmit()" class="btn btn-info">Books</button></td>
+                </div>
+            </tr>
+        </tbody>
     </table>
-</div>

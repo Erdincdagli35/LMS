@@ -27,67 +27,22 @@ td:last-child {
   text-align: center;
 }
 
-.btn {
-  display: inline-block;
-  border-radius: 3px;
-  font-size: 16px;
-  padding: 10px 20px;
-  color: #ffffff;
-  background-color: #333333;
+.table-container button {
+  background-color: #060b06; 
   border: none;
+  color: white;
+  padding: 10px 25px; 
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  border-radius: 5px; 
+  transition-duration: 0.4s; 
 }
 
-.btn:hover {
-  background-color: #555555;
-}
-
-.btn.add:before {
-  content: "\f067";
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  margin-right: 5px;
-}
-
-.btn.delete:before {
-  content: "\f1f8";
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  margin-right: 5px;
-}
-
-.btn.update:before {
-  content: "\f044";
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  margin-right: 5px;
-}
-
-.btn.details:before {
-  content: "\f05a";
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  margin-right: 5px;
-}
-
-.btn.add-shelf:before {
-  content: "\f055";
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  margin-right: 5px;
-}
-
-.btn.delete-shelf:before {
-  content: "\f1f8";
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  margin-right: 5px;
-}
-
-.btn.delete-all-shelves:before {
-  content: "\f1f8";
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  margin-right: 5px;
+.table-container button:hover {
+  background-color: #666e67; 
+  color: white;
 }

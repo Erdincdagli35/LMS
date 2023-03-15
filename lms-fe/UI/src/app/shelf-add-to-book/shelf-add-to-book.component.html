@@ -1,28 +1,28 @@
-<h3 align="center">Add Book</h3>
-<div class="shelf">
-<form (ngSubmit)="onSubmit()">
-    <div class="form-group">
-        <table class="table mat-table">
-            <tr>
-                <th><label> <b> ID: </b></label></th>
-                <td>{{shelf.id}}</td>
-            </tr>
-            <tr>
-                <th><label> <b> Name: </b></label></th>
-                <td><input type="text" class="form-control" id="name" [(ngModel)]="book.name" name="name"></td>
-            </tr>
-            <tr>
-                <th><label> <b> Author: </b></label></th>
-                <td><input type="text" class="form-control" id="author" [(ngModel)]="book.author" name="author"></td>
-            </tr>
-            <tr>
-                <th><label> <b>Page Number : </b></label></th>
-                <td><input type="text" class="form-control" id="pageNumber" [(ngModel)]="book.pageNumber" name="pageNumber"></td>
-            </tr>
-            <tr>
-                <td><label><button class="btn btn-success" type="submit">Submit</button></label></td>
-            </tr>
-        </table>
+<div class="form-container">
+<h3>Shelf : add Book</h3>
+<form>
+    <div class="form-field">
+            <label>ID: </label>
+            <label>{{shelf.id}}</label>
     </div>
-    </form>
+    &nbsp;
+    <div class="form-field">
+                <b><label>Name: </label></b>
+                <td><input type="text" class="form-control" id="name" [(ngModel)]="book.name" name="name">
+    </div>
+    &nbsp;
+    <div class="form-field">
+                <b><label>Author: </label></b>
+                <input type="text" class="form-control" id="author" [(ngModel)]="book.author" name="author">
+    </div>
+    <div class="form-field">
+                <b><label> Page Number : </label></b>
+                <input type="text" class="form-control" id="pageNumber" [(ngModel)]="book.pageNumber" name="pageNumber">
+    </div>
+    <div class="form-buttons">
+                <label><button class="btn btn-success" (click)="onSubmit()">Add</button></label>
+            <label><button class="btn btn-success" type="reset">Reset</button></label>
+            <label><button class="btn btn-success" type="submit" (click)="goToShelfList()">Shelves</button></label>
+    </div>
+   </form>
 </div>

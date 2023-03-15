@@ -5,7 +5,6 @@ import { Shelf } from '../models/shelf';
 import { ShelfService } from '../shelf-service/shelf-service';
 
 import { Book } from '../models/book';
-import { Category } from '../models/Category';
 
 @Component({
   selector: 'app-shelf-add-to-book',
@@ -18,9 +17,7 @@ export class ShelfAddToBookComponent {
   shelves: Shelf[] =[];
 
   book: Book = new Book();
-  selectedCategory : Category = Category.Action;
-  categories = Object.values(Category);
-
+  
   constructor(private shelfService: ShelfService, 
               private activetedRoute: ActivatedRoute, 
               private router: Router){}

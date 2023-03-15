@@ -1,3 +1,4 @@
+<hr>
 <div class="table-container" style="text-align: center;">
 <h2 >Library List</h2> 
 <table>
@@ -16,17 +17,15 @@
             <td>{{ library.id }}</td>
             <td>{{ library.name }}</td>
             <td>{{ library.capacity }}</td>
-            <td><button class="btn add" type="submit" (click)="deleteLibrary(library.id)" class="btn btn-danger">Delete</button> &nbsp;
+            <td><button class="button" type="submit" (click)="deleteLibrary(library.id)" class="btn btn-danger">Delete</button> &nbsp;
                 <button class="button" type="submit" (click)="updateLibrary(library.id)" class="btn btn-danger">Update</button> &nbsp;
                 <button class="button" type="submit" (click)="detailsLibrary(library.id)" class="btn btn-danger">Details</button>
             </td>
             <td><button class="button" type="submit" (click)="addToShelf(library.id)" class="btn btn-danger">Add</button> &nbsp;
-                <button class="button" type="submit" (click)="removeToShelf(library.id,shelfIds)" class="btn btn-danger">Delete</button> &nbsp;
                 <button class="button" type="submit" (click)="removeAllShelves(library.id)" class="btn btn-danger">Delete All</button>
             </td>
         </tr>
     </tbody>
-
 </table>
 
 <hr> 
@@ -52,5 +51,4 @@
         
     </tbody>
 </table>
-
 </div>

@@ -19,8 +19,6 @@ public class Shelf {
 
     private String name;
 
-    private Category category;
-
     private Integer storage;
 
     @JsonIgnore

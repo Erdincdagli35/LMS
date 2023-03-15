@@ -2,9 +2,12 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { Library } from '../models/library';
-import { LibraryService } from '../library-service/library-service';
+import { Book } from '../models/book';
+
 import { Shelf } from '../models/shelf';
 import { ShelfService } from '../shelf-service/shelf-service';
+
+
 
 @Component({
   selector: 'app-shelf-list',
@@ -18,6 +21,8 @@ export class ShelfListComponent {
   shelf : Shelf = new Shelf();
   shelves : Shelf[] = [];
   shelfIds : number[] = [];
+
+  books : Book[] =  [];
 
   constructor(private shelfService:ShelfService, 
               private router:Router){}
