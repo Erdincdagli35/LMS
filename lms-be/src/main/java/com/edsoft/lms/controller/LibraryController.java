@@ -5,14 +5,12 @@ import com.edsoft.lms.model.Shelf;
 import com.edsoft.lms.repository.LibraryRepository;
 import com.edsoft.lms.service.LibraryService;
 import com.edsoft.lms.validation.LibraryValidation;
-import com.edsoft.lms.validation.ShelfValidation;
 import lombok.AllArgsConstructor;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Arrays;
 import java.util.List;
 
 /*
@@ -36,7 +34,6 @@ public class LibraryController {
     private final LibraryService libraryService;
     private final LibraryRepository libraryRepository;
     private final LibraryValidation libraryValidation;
-    private final ShelfValidation shelfValidation;
 
     @PostMapping
     public ResponseEntity create(@RequestBody Library library) {
@@ -91,14 +88,15 @@ public class LibraryController {
 
     @PostMapping("addShelf/{libraryId}")
     public ResponseEntity addToShelf(@PathVariable Long libraryId,
-                                     @RequestBody Shelf shelf) {
+                                         @RequestBody Shelf shelf)  {
+
         if (!libraryValidation.existsLibraryById(libraryId)) {
             return ResponseEntity
                     .status(HttpStatus.INTERNAL_SERVER_ERROR)
                     .body("There is not a Library id : " + libraryId);
         }
 
-        if (!libraryValidation.notEnterZeroForStorage(shelf)){
+        if (!libraryValidation.notEnterZeroForStorage(shelf)) {
             return ResponseEntity
                     .status(HttpStatus.INTERNAL_SERVER_ERROR)
                     .body("Library capacity is not enough.");

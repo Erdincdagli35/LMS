@@ -11,6 +11,7 @@ import java.util.Set;
 @Getter
 @Setter
 @EqualsAndHashCode
+@AllArgsConstructor
 @NoArgsConstructor
 public class Shelf {
     @Id

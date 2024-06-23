@@ -3,20 +3,14 @@ package com.edsoft.lms.validation;
 import com.edsoft.lms.model.Library;
 import com.edsoft.lms.model.Shelf;
 import com.edsoft.lms.repository.LibraryRepository;
-import com.edsoft.lms.repository.ShelfRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
-import java.util.List;
 
 @Component
 public class LibraryValidation {
 
     @Autowired
     LibraryRepository libraryRepository;
-    @Autowired
-    private ShelfRepository shelfRepository;
-    //private Integer totalStorage = 0;
 
     public boolean existsLibrary(Library library) {
         return libraryRepository.findOneById(library.getId()) == null;
