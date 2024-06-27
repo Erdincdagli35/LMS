@@ -19,6 +19,4 @@ public interface LibraryService {
     Long addToShelf(Shelf shelf, Long libraryId);
 
     List<Long> removeAllShelf(Long libraryId);
-
-    void duplicate();
 }

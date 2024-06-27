@@ -24,30 +24,3 @@
             </tr>
         </tbody>
     </table>
-<hr> 
-<h2>Shelf - Book List </h2>
-<div class="book">
-    <br>
-    <table class="table">
-        <thead class="table-dark">
-            <tr>
-                <th>Shelf ID</th>
-                <th>Shelf Name</th>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Page Number</th>
-                <th>Author</th>
-            </tr>
-        </thead>
-        <tbody>
-                <tr *ngFor="let book of books">
-                    <td>{{ book.shelfId }}</td>
-                    <td>{{ book.shelfName}}</td>
-                    <td>{{ book.id }}</td>
-                    <td>{{ book.name }}</td>
-                    <td>{{ book.pageNumber }}</td>
-                    <td>{{ book.author}}</td>
-                </tr>            
-        </tbody>
-    </table>
-</div>

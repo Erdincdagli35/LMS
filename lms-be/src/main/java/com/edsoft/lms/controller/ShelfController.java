@@ -50,7 +50,7 @@ public class ShelfController {
                     .status(HttpStatus.INTERNAL_SERVER_ERROR)
                     .body("There is not a shelf id : " + shelf.getId());
         }
-        if (!shelfValidation.validateStorageByCapacity(shelfTemp,shelf)){
+        if (!shelfValidation.validateStorageByCapacity(shelfTemp, shelf)) {
             return ResponseEntity
                     .status(HttpStatus.INTERNAL_SERVER_ERROR)
                     .body("There is not a shelf id : " + shelf.getId());
@@ -85,12 +85,12 @@ public class ShelfController {
 
     @PostMapping("addBook/{shelfId}")
     public ResponseEntity addToBook(@PathVariable Long shelfId,
-                                     @RequestBody Book book) {
-        if (!bookValidation.existsShelfById(shelfId)) {
+                                    @RequestBody Book book) {
+        /*if (!bookValidation.existsShelfById(shelfId)) {
             return ResponseEntity
                     .status(HttpStatus.INTERNAL_SERVER_ERROR)
                     .body("There is not a Shelf id : " + shelfId);
-        }
+        }*/
 
         return ResponseEntity.ok(shelfService.addToBook(book, shelfId));
     }

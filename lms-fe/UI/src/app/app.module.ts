@@ -41,6 +41,7 @@ import { BookEditComponent } from './book-edit/book-edit.component';
     ShelfDeleteComponent,
     ShelfDetailsComponent,
     ShelfEditComponent,
+    ShelfAddToBookComponent,
     BookListComponent,
     BookDetailsComponent,
     BookEditComponent,

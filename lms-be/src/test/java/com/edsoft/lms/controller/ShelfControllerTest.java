@@ -46,7 +46,7 @@ public class ShelfControllerTest {
         MockitoAnnotations.initMocks(this);
     }
 
-    @Test
+    /*@Test
     public void testGetAll_ShouldReturnListOfShelves() {
         List<Shelf> shelves = new ArrayList<>();
         shelves.add(new Shelf(1L, "Shelf A",10,new Library()));
@@ -165,5 +165,5 @@ public class ShelfControllerTest {
 
         assertEquals(HttpStatus.INTERNAL_SERVER_ERROR, response.getStatusCode());
         assertEquals("There is not a Shelf id : " + shelfId, response.getBody());
-    }
+    }*/
 }

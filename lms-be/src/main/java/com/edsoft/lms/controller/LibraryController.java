@@ -128,10 +128,4 @@ public class LibraryController {
 
         return ResponseEntity.ok(libraryService.removeAllShelf(libraryId));
     }
-
-    @GetMapping("/test")
-    public ResponseEntity duplicate() {
-        libraryService.duplicate();
-        return ResponseEntity.ok("Test");
-    }
 }

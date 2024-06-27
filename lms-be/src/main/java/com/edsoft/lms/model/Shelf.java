@@ -2,15 +2,17 @@ package com.edsoft.lms.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
-@Data
 @Getter
 @Setter
-@EqualsAndHashCode
 @AllArgsConstructor
 @NoArgsConstructor
 public class Shelf {
@@ -25,4 +27,17 @@ public class Shelf {
     @JsonIgnore
     @ManyToOne(targetEntity = Library.class, cascade = {CascadeType.ALL})
     private Library library;
+    /*
+        @OneToMany(mappedBy = "shelf", cascade = CascadeType.ALL, orphanRemoval = true)
+        private List<Book> books = new ArrayList<>();
+    */
+    @OneToMany(mappedBy = "shelf", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Book> books = new ArrayList<>();
+
+    public void addBook(Book book) {
+        books.add(book);
+        book.setShelf(this);
+    }
+
+
 }

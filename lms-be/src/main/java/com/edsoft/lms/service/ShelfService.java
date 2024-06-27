@@ -4,6 +4,7 @@ import com.edsoft.lms.model.Book;
 import com.edsoft.lms.model.Shelf;
 
 import java.util.List;
+import java.util.Set;
 
 public interface ShelfService {
     List<Shelf> getAll();

@@ -22,7 +22,10 @@ export class ShelfListComponent {
   shelves : Shelf[] = [];
   shelfIds : number[] = [];
 
-  books : Book[] =  [];
+  books : Book[] = [];
+  book : Book = new Book();
+  bookIds : number[] = [];
+  bookId : number = 0;
 
   constructor(private shelfService:ShelfService, 
               private router:Router){}
@@ -32,11 +35,21 @@ export class ShelfListComponent {
       this.getShelf();
     }
   
+
     private getShelf(){
       this.shelfService.getShelfList().subscribe(data => {
-        this.shelves = data; 
+        this.shelves = data;
+        
+        for(this.shelf of this.shelves){
+            for(this.book of this.shelf.books){
+              this.book.shelfId = this.shelf.id;
+              this.book.shelfName = this.shelf.name
+              this.books.push(this.book);
+            }    
+        } 
       });
     }
+
 
     getAllShelf(){
       this.router.navigate(['/shelf-list']);

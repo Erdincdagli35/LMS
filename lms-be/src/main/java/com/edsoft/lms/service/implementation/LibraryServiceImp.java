@@ -1,7 +1,5 @@
 package com.edsoft.lms.service.implementation;
 
-import com.edsoft.lms.model.Book;
-import com.edsoft.lms.model.Category;
 import com.edsoft.lms.model.Library;
 import com.edsoft.lms.model.Shelf;
 import com.edsoft.lms.repository.LibraryRepository;
@@ -13,9 +11,7 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
 
 @Log4j2
 @Service
@@ -32,15 +28,16 @@ public class LibraryServiceImp implements LibraryService {
         return libraryRepository.save(library).getId();
     }
 
-    public void setCurrentCapacityWhenSavedTheShelf(Library library){
+    public void setCurrentCapacityWhenSavedTheShelf(Library library) {
         Integer totalShelfStorage = 0;
         List<Shelf> shelfList = library.getShelves();
-        for (Shelf shelf: shelfList)
-            totalShelfStorage+= shelf.getStorage();
+        for (Shelf shelf : shelfList)
+            totalShelfStorage += shelf.getStorage();
 
         library.setCurrentCapacity(library.getCapacity() - totalShelfStorage);
         libraryRepository.save(library);
     }
+
     @Override
     public List<Library> getAll(String name) {
         List<Library> libraries = (name == null) ? libraryRepository.findAllByOrderById() : libraryRepository.findAllByName(name);
@@ -94,71 +91,5 @@ public class LibraryServiceImp implements LibraryService {
         libraryRepository.save(library);
 
         return shelveIds;
-    }
-
-    @Override
-    public void duplicate() {
-        /*Book book = new Book();
-        book.setId(1L);
-        book.setAuthor("Erdinç");
-        book.setName("Book");
-        book.setCategory(Category.Action);
-        List<Category> categories = new ArrayList<>();
-        categories.add(Category.Action);
-        categories.add(Category.History);
-
-        Book book2 = new Book();
-        book2.setId(2L);
-        book2.setAuthor("Erdinç");
-        book2.setName("Book");
-        book2.setCategory(Category.Horror);
-
-
-        if (categories.contains(book.getCategory())){
-            System.out.println("True");
-        }
-        if (categories.contains(book2.getCategory())) {
-            System.out.println("True");
-        }else{
-            System.out.println("False");
-        }*/
-
-
-
-       /* List<Library> libraryList = new ArrayList<>();
-        Library library = new Library(1L, "City", 12, null);
-        Library library2 = new Library(1L, "City", 13, null);
-
-        libraryList.add(library);
-        libraryList.add(library2);
-
-        for (int i = 0; i < libraryList.size(); i++) {
-            for (int j = 0; j < libraryList.size(); j++) {
-                if (i!=j &&
-                            libraryList.get(i).equals(libraryList.get(j))) {
-                    System.out.println("Suplicate");
-                }
-            }
-        }*/
-        /*
-        String ip = "10.254.135.84";
-        String[] INET4ADDRESS = new String[]{"0.1.2.3", "1.2.3.4", "10.20.49.91", "10.20.49.93", "10.53.37.91", "10.53.37.93", "10.254.135.84"};
-        // Validate an IPv4 address
-        for (int i = 0; i < INET4ADDRESS.length; i++) {
-            if (isValidInet4Address(INET4ADDRESS[i])) {
-                System.out.println("The IP address " + INET4ADDRESS[i] + " is valid");
-            } else {
-                System.out.println("The IP address " + INET4ADDRESS[i] + " isn't valid");
-            }
-        }
-
-        String[] strArr = ip.split("\\.");
-        long address = Long.parseLong(strArr[0]);
-
-        for (int i = 1; i < 4; i++) {
-            address = (address << 8) + Long.parseLong(strArr[i]);
-        }
-
-        System.out.println("Address : " + address);*/
     }
 }
